@@ -1,8 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-import api from './api.js';
 
-const API_URL = 'http://https://scheduly-backend-qpnp.onrender.com:5000/api';
+const API_URL = 'https://scheduly-backend-qpnp.onrender.com:5000/api';
 
 // Helper function to check if the stored token is valid
 export const isTokenValid = () => {
