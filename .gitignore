@@ -40,3 +40,4 @@ yarn-error.log*
 ehthumbs.db
 Thumbs.db 
 server/.env
+client/.env
