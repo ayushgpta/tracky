@@ -129,20 +129,5 @@ The API includes the following main endpoints:
 - **Messages**: `/api/messages` - User messaging
 - **Photos**: `/api/photos` - Photo uploads and management
 
-## Contributing
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature-name`
-3. Commit changes: `git commit -am 'Add feature'`
-4. Push to the branch: `git push origin feature-name`
-5. Submit a pull request
 
-## License
-
-This project is licensed under the MIT License.
-
-## Contact
-
-Saqib Mehdi - [GitHub](https://github.com/SaqibMehdi123)
-
-Project Link: https://github.com/SaqibMehdi123/SkillForge 
