@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Fallback: set env vars directly if not loaded
-if (!process.env.MONGO_URI) process.env.MONGO_URI = 'mongodb://127.0.0.1:27017/skillforge';
+if (!process.env.MONGO_URI) process.env.MONGO_URI = 'mongodb://127.0.0.1:27017/Scheduly';
 if (!process.env.JWT_SECRET) process.env.JWT_SECRET = 'supersecretkey';
 if (!process.env.CLIENT_URL) process.env.CLIENT_URL = 'http://localhost:3000';
 
@@ -71,7 +71,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Basic route
 app.get('/', (req, res) => {
-  res.send('SkillForge API is running');
+  res.send('Scheduly API is running');
 });
 
 // Import routes

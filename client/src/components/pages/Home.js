@@ -48,7 +48,7 @@ const testimonials = [
     name: 'Alex Johnson',
     title: 'Guitar Enthusiast',
     avatar: 'https://randomuser.me/api/portraits/men/32.jpg',
-    quote: "SkillForge helped me track my guitar practice and stay consistent. I've made more progress in 3 months than I did all last year!",
+    quote: "Scheduly helped me track my guitar practice and stay consistent. I've made more progress in 3 months than I did all last year!",
     stars: 5,
   },
   {
@@ -283,7 +283,7 @@ const Home = () => {
                 textShadow: '0 2px 10px rgba(0,0,0,0.2)',
               }}
             >
-              Transform Your Skills with <br /> <Box component="span" sx={{ color: '#FFD700' }}>SkillForge</Box>
+              Transform Your Skills with <br /> <Box component="span" sx={{ color: '#FFD700' }}>Scheduly</Box>
             </Typography>
           </Grow>
           
@@ -545,7 +545,7 @@ const Home = () => {
                 color: '#8c52ff',
               }}
             >
-              How SkillForge Works
+              How Scheduly Works
             </Typography>
             <Typography 
               variant="h6" 
@@ -750,7 +750,7 @@ const Home = () => {
               opacity: 0.9,
             }}
           >
-            Join thousands of users who are transforming their skills and habits with SkillForge. 
+            Join thousands of users who are transforming their skills and habits with Scheduly. 
             Start for free and see the difference structured practice makes.
           </Typography>
           

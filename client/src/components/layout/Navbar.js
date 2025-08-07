@@ -139,7 +139,7 @@ const Navbar = () => {
                 fontSize: { xs: '1.25rem', sm: '1.5rem' },
               }}
             >
-              SkillForge
+              Scheduly
             </Typography>
           </Box>
           
@@ -408,7 +408,7 @@ const Navbar = () => {
       >
         <Box sx={{ p: 2, borderBottom: '1px solid', borderColor: 'divider' }}>
           <Typography variant="h6" sx={{ fontWeight: 'bold', color: '#6d28d9' }}>
-            SkillForge
+            Scheduly
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Hello, {user?.username || 'User'}

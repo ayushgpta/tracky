@@ -1,9 +1,9 @@
-# SkillForge
+# Scheduly
 
 
 ## Overview
 
-SkillForge is a comprehensive skill development and social learning platform that enables users to practice skills, track progress, earn achievements, and connect with fellow learners. The application features a full-fledged social network with messaging capabilities, progress tracking, and personalized practice sessions.
+Scheduly is a comprehensive skill development and social learning platform that enables users to practice skills, track progress, earn achievements, and connect with fellow learners. The application features a full-fledged social network with messaging capabilities, progress tracking, and personalized practice sessions.
 
 ## Features
 
@@ -53,8 +53,8 @@ SkillForge is a comprehensive skill development and social learning platform tha
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/SaqibMehdi123/SkillForge.git
-   cd SkillForge
+   git clone https://github.com/SaqibMehdi123/Scheduly.git
+   cd Scheduly
    ```
 
 2. Install dependencies
@@ -96,7 +96,7 @@ SkillForge is a comprehensive skill development and social learning platform tha
 ## Project Structure
 
 ```
-SkillForge/
+Scheduly/
 ├── client/                  # Frontend React application
 │   ├── public/              # Static assets
 │   └── src/

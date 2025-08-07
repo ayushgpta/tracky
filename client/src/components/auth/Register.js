@@ -66,7 +66,7 @@ const Register = () => {
           }}
         >
           <Typography component="h1" variant="h5">
-            Create your SkillForge account
+            Create your Scheduly account
           </Typography>
           {error && (
             <Alert severity="error" sx={{ width: '100%', mt: 2 }}>
