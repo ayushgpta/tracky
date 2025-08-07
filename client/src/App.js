@@ -25,6 +25,8 @@ import FloatingChatButton from './components/social/FloatingChatButton';
 // Message Notification Component
 const MessageNotification = ({ open, message, handleClose, handleClick }) => {
   if (!message) return null;
+  console.log("REACT_APP_API_URL:", process.env.REACT_APP_API_URL);
+
   
   return (
     <Snackbar

@@ -198,7 +198,7 @@ const Profile = () => {
         },
       };
 
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/users/avatar`, formData, config);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/users/avatar`, formData, config);
       
       if (response.data.success) {
         // Update profile with new avatar URL

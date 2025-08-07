@@ -38,7 +38,7 @@ export const register = createAsyncThunk(
   'auth/register',
   async ({ username, email, password }, { rejectWithValue }) => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/register`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, {
         username,
         email,
         password,
@@ -60,7 +60,7 @@ export const login = createAsyncThunk(
   'auth/login',
   async ({ email, password }, { rejectWithValue }) => {
     try {
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/auth/login`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/auth/login`, {
         email,
         password,
       });
@@ -87,7 +87,7 @@ export const loadUser = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       };
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/users/me`, config);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/users/me`, config);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data.message);
@@ -203,7 +203,7 @@ export const addXP = createAsyncThunk(
       };
 
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/users/xp`, 
+        `${process.env.REACT_APP_API_URL}/users/xp`, 
         { xp: amount },
         config
       );
@@ -234,7 +234,7 @@ export const addBadge = createAsyncThunk(
       };
 
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/users/badge`, 
+        `${process.env.REACT_APP_API_URL}/users/badge`, 
         { badgeId },
         config
       );
@@ -272,7 +272,7 @@ export const updateStreak = createAsyncThunk(
       console.log(`Sending streak update to server:`, payload);
       
       const response = await axios.post(
-      `${import.meta.env.VITE_API_URL}/users/streak`, 
+      `${process.env.REACT_APP_API_URL}/users/streak`, 
         payload,
         config
       );
@@ -282,7 +282,7 @@ export const updateStreak = createAsyncThunk(
       // Also check for streak achievements
       try {
         await axios.post(
-          `${import.meta.env.VITE_API_URL}/achievements/check-streak`,
+          `${process.env.REACT_APP_API_URL}/achievements/check-streak`,
           { streak: current },
           config
         );
@@ -313,7 +313,7 @@ export const updateProfile = createAsyncThunk(
       };
       
       const response = await axios.put(
-        `${import.meta.env.VITE_API_URL}/users/me`, 
+        `${process.env.REACT_APP_API_URL}/users/me`, 
         profileData,
         config
       );

@@ -14,7 +14,7 @@ export const getConversations = createAsyncThunk(
           Authorization: `Bearer ${token}`,
         },
       };
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/messages/conversations`, config);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/messages/conversations`, config);
       
       // Enhance conversation data with friend information when available
       const { friends } = getState().friends;
@@ -54,7 +54,7 @@ export const getConversation = createAsyncThunk(
       };
       
       // Always make a fresh request with a timestamp to prevent caching
-      const url = `${import.meta.env.VITE_API_URL}/messages/conversations/${userId}?timestamp=${Date.now()}`;
+      const url = `${process.env.REACT_APP_API_URL}/messages/conversations/${userId}?timestamp=${Date.now()}`;
       const response = await axios.get(url, config);
       
       // Get friend info to enhance messages if needed
@@ -116,7 +116,7 @@ export const sendMessage = createAsyncThunk(
         formData.append('practicePhotoUrl', practicePhotoUrl);
       }
       
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/messages`, formData, config);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/messages`, formData, config);
       
       // Get current user details for better message display
       const { user } = getState().auth;
@@ -153,7 +153,7 @@ export const uploadMessageImage = createAsyncThunk(
       const formData = new FormData();
       formData.append('image', image);
       
-      const response = await axios.post(`${import.meta.env.VITE_API_URL}/messages/upload-image`, formData, config);
+      const response = await axios.post(`${process.env.REACT_APP_API_URL}/messages/upload-image`, formData, config);
       return response.data.imageUrl;
     } catch (error) {
       return rejectWithValue(error.response.data.message);

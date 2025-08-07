@@ -262,7 +262,7 @@ const Achievements = () => {
           },
         };
         
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/achievements/me`, config);
+        const response = await axios.get(`${process.env.REACT_APP_API_URL}/achievements/me`, config);
         
         // Map server achievements to our format
         const serverAchievements = response.data.map(achievement => ({
@@ -375,7 +375,7 @@ const Achievements = () => {
           for (const achievement of newlyEarnedAchievements) {
             try {
               const response = await axios.post(
-                `${import.meta.env.VITE_API_URL}/achievements`,
+                `${process.env.REACT_APP_API_URL}/achievements`,
                 {
                   type: achievement.type,
                   name: achievement.title,

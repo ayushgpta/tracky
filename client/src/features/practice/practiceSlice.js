@@ -71,7 +71,7 @@ export const savePracticeSession = createAsyncThunk(
       console.log('Saving practice session:', sessionData);
       
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/practice/sessions`, 
+        `${process.env.REACT_APP_API_URL}/practice/sessions`, 
         sessionData,
         config
       );
@@ -131,7 +131,7 @@ export const saveTaskPhoto = createAsyncThunk(
       });
       
       const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/photos`, 
+        `${process.env.REACT_APP_API_URL}/photos`, 
         { 
           imageData, 
           taskName,
@@ -184,7 +184,7 @@ export const getUserPhotos = createAsyncThunk(
         },
       };
       
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/photos`, config);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/photos`, config);
       return response.data.photos;
     } catch (error) {
       const message =
@@ -211,11 +211,11 @@ export const getUserPracticePhotos = createAsyncThunk(
       console.log('Fetching practice photos...');
       
       // First, fetch the user's practice photos
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/practice/photos`, config);
+      const response = await axios.get(`${process.env.REACT_APP_API_URL}/practice/photos`, config);
       console.log('Practice photos response:', response.data);
       
       // Also fetch general photos which might be in a different endpoint
-      const generalPhotosResponse = await axios.get(`${import.meta.env.VITE_API_URL}/photos`, config);
+      const generalPhotosResponse = await axios.get(`${process.env.REACT_APP_API_URL}/photos`, config);
       console.log('General photos response:', generalPhotosResponse.data);
       
       // Combine both sets of photos
@@ -249,7 +249,7 @@ export const getUserPracticePhotos = createAsyncThunk(
         
         // Try to fetch any images from the server's public directory
         try {
-          const mockResponse = await axios.get(`${import.meta.env.VITE_API_URL}/public/images`, config);
+          const mockResponse = await axios.get(`${process.env.REACT_APP_API_URL}/public/images`, config);
           if (mockResponse.data && mockResponse.data.images) {
             const mockPhotos = mockResponse.data.images.map((path, index) => ({
               id: `mock-${index}`,
