@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const API_URL = 'https://scheduly-backend-qpnp.onrender.com:5000/api';
+const API_URL = 'http://localhost:5000/api';
 
 // Get all users
 export const getAllUsers = createAsyncThunk(

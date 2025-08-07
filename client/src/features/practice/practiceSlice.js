@@ -3,7 +3,7 @@ import API from '../../api';
 import axios from 'axios';
 import { updateUserStreak } from '../auth/authSlice';
 
-const API_URL = 'https://scheduly-backend-qpnp.onrender.com:5000/api';
+const API_URL = 'http://localhost:5000/api';
 
 // Async thunks for backend integration
 export const startSession = createAsyncThunk(
