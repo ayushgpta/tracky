@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Fallback: set env vars directly if not loaded
-if (!process.env.MONGO_URI) process.env.MONGO_URI = 'mongodb://127.0.0.1:27017/Scheduly';
+if (!process.env.MONGO_URI) process.env.MONGO_URI = 'mongodb://127.0.0.1:27017/skillforge';
 if (!process.env.JWT_SECRET) process.env.JWT_SECRET = 'supersecretkey';
 if (!process.env.CLIENT_URL) process.env.CLIENT_URL = 'http://localhost:3000';
 
@@ -23,20 +23,7 @@ if (!process.env.MONGO_URI) {
 const app = express();
 
 // Middleware
-const cors = require('cors');
-
-app.use(cors({
-  origin: [
-    'https://scheduly-hub.vercel.app/', 
-    'http://localhost:3000'
-  ],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}));
-
-// Handle preflight requests
-app.options('*', cors());
+app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:3000', credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -71,7 +58,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Basic route
 app.get('/', (req, res) => {
-  res.send('Scheduly API is running');
+  res.send('SkillForge API is running');
 });
 
 // Import routes
