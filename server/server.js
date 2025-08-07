@@ -23,7 +23,16 @@ if (!process.env.MONGO_URI) {
 const app = express();
 
 // Middleware
-app.use(cors({ origin: process.env.CLIENT_URL || 'http://localhost:3000', credentials: true }));
+app.use(cors({
+  origin: [
+    'https://tracky-amber.vercel.app/', // ✅ replace with YOUR frontend URL
+    'http://localhost:3000'      // ✅ keep for dev
+  ],
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
